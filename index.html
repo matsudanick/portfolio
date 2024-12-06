@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nicolas Matsuda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="box">
+        <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
+        <div class="box2 animated bounceOutRight" style="animation-delay:1.9s;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
+    </div>
+    <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
+    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">work</a>
+    <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
+    <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
+        <h1>Nicolas Matsuda</h1>
+        <h2>Data Analyst Jr. / Python Developer Jr.</h2>
+        <div id="menu">
+            <a onclick="showabout()">about</a>
+            <a onclick="showwork()">work</a>
+            <a onclick="showcontact()">contact</a>
+        </div>
+        <table>
+                <tr>
+                    <td class="animated zoomIn" style="animation-delay:2.4s;">
+                        <a class="social" href="https://www.linkedin.com/in/nicolas-ryuji-matsuda-395338302/?locale=en_US" target="_blank">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUJJREFUSEvtlc0qRlEUhp+HUkZkYqT8FANRMvJTBi5DbkAZKBMjc6Wk3IFchgykyFiS/I2MlAkDZbG1v6/jfKKcjwm7dp2zdvt91nrXPvvIDw9/WJ8GQET0A8/qVTPg7wARsQksZuF1dbkqpA6IiCHgtCTYq15XgXwF6KtqVdmiLWAhZ7yhLlXJPu39qMmDucnnVcUbABExCbRl4Uf1MD1HxBjQkeMP6tHrgegCpoERoBXYURuSKlt0C3RnoQt1IAP2gakcP3tlribBkgPPwIq6Vqz8O4A7oD3Pj1ycVXdrC98B1PYm0A0wCrQUSMmquaqAbXU+2zcD7BUAJ+pwVcCQmnrxNiIiVdKTX+/VzqqANvWpADgGxuuiWrf+sx5cquniSxkWT1EKtahRABwAE/+A2of2ly1qxu1Z1vj9n36zq3gBLPzRGctIENYAAAAASUVORK5CYII="/>
+                        </a>
+                    </td>
+                    <td class="animated zoomIn" style="animation-delay:2.6s;">
+                        <a class="social" href="https://www.instagram.com/eomatsuda/" target="_blank">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAmJJREFUSEvFlU2IT2EUxn8PiojZTFYYhUISIklYIKU0MZphsLHxsVDko8hCiQwhKwsW0vjIZ5QSOymJpBg0kZQNK7LydbyP3v/0d+d/m39qmru79573PM95nnPOK/r5UT/nZ2AAImICsANYAEyDUiIBvAAeACcldRcV6VVBRGwGTgFDgA/AI+B1iZSzgBnAWOAHsFXSmerYfwAiYnZO2AWslPS2Ho8iwlXeAsYBcyQ9q5wrAlwHlgOTJb3vK3lEbEjyHQC+pGo3Ak9SRTcltZQBOGmXJIP0PBExCFgKTAV+Aa+A+/nbXUspqSkiDNAoaXwZwFegU9KWSkBEWN/LwLxCRTb2bNL9EzBa0rmIsALLJI0oA/gNHJO02wGZ+UPAjHYC94DBmXkH4K5ZKMnd5HgTWS3JMX+fogcOPCxpbz7Qmtm3SrpSkK0teXUJaJZkgw1wMcnXJsmSlgJ0SNqTD5jlLmCkpG8FgEbgc2rng5L25/hOoF1SD/FaFXhgtucDRwDL1SDJ/lQbXwE4JGlfjj8PrO8L4ERK5il2yW63q1nXawWAdjdEQSK/r+nLg+oKrKVNbspS2WRP+BLgKPAGWFQw2Z4MK/PAOrtNN1W16Zhs5vwabbpW0seqWLfpYkkNZQBuu+6SQWsGVgDfgTvA7QrzKoCnwChJk8oArOGq1JpT6lkVBU+mp/31HLiQtuq6MoCZiaVZOLBF0ruCLDVf0wQ7+Y3s1VxJztF7DnLnVNa1DX6cJfGvn8DLNIhDgYnZbH8fDngL+/82SaerWdS80f7zwjlea70PzJVZj+71xvR7BX8AWsb9GfXCJjsAAAAASUVORK5CYII="/>
+                        </a>
+                    </td>
+                    <td class="animated zoomIn" style="animation-delay:2.6s;">
+                        <a class="social" href="https://github.com/matsudanick" target="_blank">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAm9JREFUSEvFlU2IjlEUx39/kQ1ZIMkS5XOKZKGmiBI2hmKkKBn5Sk0yPko0+WgojeQj7AglzIYdCwuUiHyWSRYWPposTApxPGe6z3TfO8/7zjOLydm87z33f+7/nnPP+T9ikE2DfD41CcxsGLAcWALMBCZDT8wH4DlwJ/PfkPS72kWrEpjZIuAsMKmfLN8DmyTdLcIVEpjZbuBouG2ZKv4F9kg6noL7EJhZC9BW5tQCTLOk9thfQWBmCwBP1f1e3w3AFmA/MAToBLzeUwG/9RHgDHAKWBl89ZIe5CS9BGY2HHgFTAybrZIO+H8z83f4LOl7WI8Axkt6F9b7gMMh7jVQJ+mPr2OC1cC1KL12Sc1lSmVmx4BdEXaZJK9ABcFlYG0EmifpYUmCuqydn0XnnZa0PSXw8kzL05Q0vczhOcbMngCzw/pxlsHclOALMDYAOiQ1DJDgCrAmxHRJGpMSfMoGa1wA3JO0cIAEt4GlIaZb0siU4CkwKwC8W0bXkoCYPEjKV2BU8L+V5K1c8cgXgI1RYJOki2WyMLMm4HyEvSRpXUrgNb8JfAO6vc99/F2PJP0oIjIzn4dtYeB8EHNblTXJ9ZTAZ8I7aQKwGNgMrAd+halulPTTg0JJbgXc0IT8DTBDkk96pVyb2QqX36xUH4E5YfDmhyy2JnW/CjQWZNYgqSP3F4ndSWCH64+kQ9XewMwOZsn0SElkJzI52Rk7qsm1i1srcD8TsRfAS0nnkgx833G5tZSS6xxtZvWAS69PZ5skf/BeMzNX0r3AI8Bl2n/7WH+fTN/3T2anJM8kJpjisi3JH7uq/d+Pfq2bld37B8MT0hliYf0NAAAAAElFTkSuQmCC"/>
+                        </a>
+                    </td>
+                </tr>
+        </table>
+    </div>
+    <div id="work_container" class="container">
+        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+        <h1>Inventory Management System.</h1>
+        <section>
+            <h2></h2>
+            <p>
+                This is an Inventory Management System developed in Python, designed to record, manage, and query products efficiently. It features functionalities such as adding, deleting, and updating products, as well as generating detailed reports based on categories or prices. The system stores data in a file to ensure information persistence. The project showcases fundamental skills in programming, file handling, and generating organized reports, making it a valuable tool for practical applications or as part of backend development projects.
+            </p>
+            <div id="used">
+                <div><i class="fas fa-circle"></i>&nbsp;Python</div>
+            </div>
+        </section>
+    </div>
+    <div id="about_container" class="container">
+            <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+            <h1>About</h1>
+            <section>
+                <h2>About Me</h2>
+                <p>
+                    Professional with experience in industrial production in Japan, currently studying Systems Analysis and Development and interning at UMC. Focused on transitioning to IT and contributing to innovative projects.
+                </p>
+                <p>
+                    I am a dedicated professional with industrial production experience gained in Japan, where I worked in large-scale factories such as Daiho (air conditioner and refrigerator parts), a Toyota auto parts supplier, and FrueHauf. Currently, I am transitioning to the Information Technology field, studying Systems Analysis and Development at UMC, where I also work as an intern.
+                    My goal is to specialize and contribute to innovative projects in the IT sector, leveraging my experience in demanding environments and my results-oriented approach.
+                </p>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <p>Python / Html / Css / Power BI 
+                </p>
+            </section>
+        </div>
+          <div id="contact_container" class="container">
+            <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
+            <h1>Contact.</h1>
+            <section>
+                <h2>Contact Me</h2>
+                <p>
+                    <form>
+                        <input type="text" placeholder="name" required>
+                        <input type="email" placeholder="email" required><br>
+                        <textarea placeholder="your message" required rows="5"></textarea><br>
+                        <button class="btn_one">send</button>
+                    </form> 
+                </p>
+            </section>
+        </div>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
